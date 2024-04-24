@@ -24,22 +24,36 @@ console.log('Current price per Km: ', pricePerKm);
 
 let ticketCost = (distance * pricePerKm);
 
-console.log('Ticket cost: ', ticketCost, '€');
 
 
-
-// SE (age < 18) {
 
 // va applicato uno sconto del 20% per i minorenni
 
-// -- assegno un valore di scontistica alla variabile youngDiscount = 20
+if (age < 18) {
 
-// -- definisco una variabile discountedYoung per lo sconto minorenni ((ticketCost * youngDiscount) / 100)
+    // -- assegno un valore di scontistica alla variabile youngDiscount = 20
 
-// -- definisco una variabile ticketCostYoung calcolando il valore come (ticketCost - discountedYoung)
+    const youngDiscount = Number(20);
 
-// ticketCost =  ticketCostYoung
+    // -- definisco una variabile discountedYoung per lo sconto minorenni
 
+    const discountedYoung = Number((ticketCost * youngDiscount) / 100);
+
+    console.log(discountedYoung);
+
+    // -- definisco una variabile ticketCostYoung calcolandone il valore
+
+    const ticketCostYoung = (ticketCost - discountedYoung);
+
+    // -- assegno alla variabile ticketCost il nuovo valore con lo sconto under 18 applicato
+
+    ticketCost = ticketCostYoung;
+
+    // -- mostro in console il valore con lo sconto under 18 applicato
+
+    console.log('Ticket cost: ', ticketCost, '€', '- under 18 discount applied');
+
+}
 
 
 // } ELSE (age > 65){
@@ -59,5 +73,5 @@ console.log('Ticket cost: ', ticketCost, '€');
 
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
-
+// console.log('Ticket cost: ', ticketCost, '€');
 // console.log (ticketCost.toFixed(2)) ???
