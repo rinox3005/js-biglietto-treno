@@ -70,5 +70,9 @@ if (age < 18) {
 
     console.log('Ticket cost: ', ticketCost, '€', '- over 65 discount applied');
 
+} else {
+    ticketCost = Math.round(ticketCost * 100) / 100;
+    console.log('Ticket cost: ', ticketCost, '€');
 }
+
 
